@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: ai-attendance-sb
+    env: python
+    region: singapore        # closest to India
+    plan: free
+    rootDir: attendece        # all commands run from here
+
+    buildCommand: >-
+      pip install -r requirements.txt &&
+      cd frontend &&
+      npm ci &&
+      npm run build
+
+    startCommand: >-
+      gunicorn
+      --worker-class eventlet
+      -w 1
+      --bind 0.0.0.0:$PORT
+      --timeout 120
+      app:app
+
+    envVars:
+      - key: TEACHER_PASSWORD
+        value: admin123          # change this after first deploy!
+      - key: SECRET_KEY
+        generateValue: true      # Render auto-generates a secure random value
+      - key: PYTHON_VERSION
+        value: 3.11.0

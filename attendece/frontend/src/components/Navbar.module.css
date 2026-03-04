@@ -1,0 +1,111 @@
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 11, 15, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.brandIcon {
+    font-size: 22px;
+    color: var(--indigo-light);
+    line-height: 1;
+    filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.6));
+}
+
+.brandText {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #818cf8 0%, #c4b5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.link:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--border);
+}
+
+.linkActive {
+    color: var(--indigo-light) !important;
+    background: rgba(99, 102, 241, 0.1) !important;
+    border-color: rgba(99, 102, 241, 0.2) !important;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 18px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid rgba(99, 102, 241, 0.4);
+    background: rgba(99, 102, 241, 0.15);
+    color: var(--indigo-light);
+    transition: var(--transition);
+    letter-spacing: 0.01em;
+}
+
+.btn:hover {
+    background: rgba(99, 102, 241, 0.25);
+    border-color: rgba(99, 102, 241, 0.6);
+    box-shadow: var(--glow-indigo);
+    transform: translateY(-1px);
+}
+
+.btnLoggedIn {
+    border-color: rgba(16, 185, 129, 0.4);
+    background: rgba(16, 185, 129, 0.12);
+    color: var(--emerald-light);
+}
+
+.btnLoggedIn:hover {
+    background: rgba(16, 185, 129, 0.22);
+    border-color: rgba(16, 185, 129, 0.6);
+    box-shadow: var(--glow-emerald);
+}

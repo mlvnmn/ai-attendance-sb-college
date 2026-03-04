@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg-base:       #0a0b0f;
+  --bg-surface:    #111318;
+  --bg-card:       #16181f;
+  --bg-card-hover: #1c1f28;
+  --bg-input:      #1e2130;
+  --border:        rgba(255,255,255,0.06);
+  --border-focus:  rgba(99,102,241,0.6);
+
+  --indigo:        #6366f1;
+  --indigo-light:  #818cf8;
+  --indigo-dark:   #4f46e5;
+  --emerald:       #10b981;
+  --emerald-light: #34d399;
+  --red:           #f43f5e;
+  --amber:         #f59e0b;
+
+  --text-primary:  #f1f5f9;
+  --text-secondary:#94a3b8;
+  --text-muted:    #475569;
+
+  --radius-sm:     8px;
+  --radius:        12px;
+  --radius-lg:     18px;
+  --radius-xl:     24px;
+
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.4);
+  --shadow:        0 4px 20px rgba(0,0,0,0.5);
+  --shadow-lg:     0 12px 40px rgba(0,0,0,0.6);
+  --glow-indigo:   0 0 24px rgba(99,102,241,0.3);
+  --glow-emerald:  0 0 24px rgba(16,185,129,0.25);
+
+  --transition:    all 0.2s cubic-bezier(0.4,0,0.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* ─── Utility ─── */
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+
+/* ─── Animations ─── */
+@keyframes fadeIn   { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@keyframes scaleIn  { from { opacity:0; transform:scale(0.95); }     to { opacity:1; transform:scale(1); } }
+@keyframes slideUp  { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse-ring { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
+@keyframes spin     { to { transform:rotate(360deg); } }
+@keyframes shimmer  {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.animate-fade-in  { animation: fadeIn  0.35s ease both; }
+.animate-scale-in { animation: scaleIn 0.25s ease both; }
+.animate-slide-up { animation: slideUp 0.4s ease both; }
